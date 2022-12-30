@@ -8,7 +8,7 @@ This is a very common microservice pattern and Netflix, creator of Zuul makes us
 
 Now let’s make our hands dirty by creating a simple yet meaningful ecosystem using Zuul proxy. We will create below artifacts to demonstrate the whole thing:
 
-- Payment Microservice – a spring boot based microservice which will just expose a single url to enable some search functionality. For simplicity we will just return hardcoded values, but in real world we can connect to anywhere from this service to get the data.
+- Payment Microservice – a spring boot based microservice which will just expose a single url to enable some payment functionality. 
 - Zuul gateway service proxy – It would be again a spring boot based, which will basically intercept all the traffic of payment service and apply series of request filter and then route to the underlying service and again at the time of response serving, it will apply some response filtering. Since it is a gateway, we can literally take many interesting and useful action using the filters effectively.
 Some of the common responsibility of gateway service are –
   - Apply microservice authentication and security in the gateway layer to protect the actual services
