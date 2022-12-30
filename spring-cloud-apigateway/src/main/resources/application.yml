@@ -1,0 +1,16 @@
+server:
+  port: 8081
+  max-http-header-size: 40KB
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: payment
+          uri: http://localhost:8090
+          predicates:
+            - Path=/payment/direct/**
+          filters:
+            - RewritePath=/payment/direct, /direct
+
